@@ -23,7 +23,7 @@ const Heading = styled.h1`
 
 const Header = () => (
   <Wrapper>
-    <Heading>Multi ipsum</Heading>
+    <Heading>Multi Ipsum</Heading>
   </Wrapper>
 );
 

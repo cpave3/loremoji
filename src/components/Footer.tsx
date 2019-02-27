@@ -2,15 +2,15 @@ import * as React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.footer`
-  background-color: #34495e;
+  background-color: #2c3e50;
   padding: 5px;
   text-align: center;
-  color: #ecf0f1;
+  color: #7f8c8d;
 `;
 
 const Footer = () => (
   <Wrapper>
-    Cameron Pavey
+    {"Cameron Pavey"}
   </Wrapper>
 );
 

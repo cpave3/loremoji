@@ -8,6 +8,13 @@ import ContentType from "./components/ContentType";
 import TextType from "./components/TextType";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ['Muli:300,400,700', 'sans-serif']
+  }
+});
 
 const Main = styled.article`
   display: flex;
@@ -71,12 +78,17 @@ const TextArea = styled.textarea`
   flex: 1;
   border: 1px solid #bdc3c7;
   font-size: 1.15em;
+  font-family: 'Muli';
+  box-sizing: border-box;
+  min-width: 100%;
+  max-width: 100%;
 `;
 
 const Number = styled.input.attrs(
   (count: number, setCount: (value: number) => void) => ({
     type: "number",
     min: 1,
+    max: 100,
   })
 )`
   text-align: center;
