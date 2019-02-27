@@ -2,7 +2,8 @@ import React, { Component, useState } from "react";
 
 import styled from "styled-components";
 
-import "./App.css";
+import runOnce from "./utils/generator";
+
 import ContentType from "./components/ContentType";
 import TextType from "./components/TextType";
 import Header from "./components/Header";
@@ -15,7 +16,22 @@ const Main = styled.article`
   flex: 1;
 `;
 
-const generateOutput = (count: number, content: string, multi: boolean) => {};
+const generateOutput = (
+  count: number,
+  mode: string,
+  multi: boolean,
+  setOutput: (value: string) => void
+) => {
+  // First generate the right number of sentences
+  const sentences = [];
+  for (let i = 0; i < count; i++) {
+    sentences.push(runOnce(multi));
+  }
+
+  const stringified = sentences.reduce((acc, curr) => acc + curr, '');
+
+  setOutput(stringified);
+};
 
 const Wrapper = styled.section`
   width: 100%;
@@ -54,6 +70,27 @@ const Controls = styled.div`
 const TextArea = styled.textarea`
   flex: 1;
   border: 1px solid #bdc3c7;
+  font-size: 1.15em;
+`;
+
+const Number = styled.input.attrs(
+  (count: number, setCount: (value: number) => void) => ({
+    type: "number",
+    min: 1,
+  })
+)`
+  text-align: center;
+  width: 30px;
+  margin: 0 10px;
+  border: none;
+  border-bottom: 1px solid #bdc3c7;
+  color: #95a5a6;
+  font-size: 1em;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const App = () => {
@@ -67,16 +104,11 @@ const App = () => {
       <Main>
         <Controls>
           <span>Generate</span>
-          <input
-            type="number"
-            onChange={e => setCount(parseInt(e.target.value))}
+          <Number
             value={count}
+            onChange={e => setCount(parseInt(e.target.value))}
           />
-          <ContentType
-            handleChange={(value: string) => setContent(value)}
-            value={content}
-          />
-          <span>&nbsp;of&nbsp;</span>
+          <span>&nbsp;{count === 1 ? 'sentence' : 'sentences'} of&nbsp;</span>
           <TextType
             handleChange={(value: boolean) => setMulti(value)}
             value={multi}
@@ -86,7 +118,7 @@ const App = () => {
         <ContentArea>
           <GenerateButton
             onClick={() => {
-              generateOutput(count, content, multi);
+              generateOutput(count, content, multi, setOutput);
             }}
           >
             Generate
