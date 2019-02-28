@@ -1,6 +1,6 @@
 # What is this?
 
-**Demo available at [https://loremoji.surge.sh](https://mipsum.surge.sh)**
+**Demo available at [https://loremoji.surge.sh](https://loremoji.surge.sh)**
 
 Multi Ipsum is a random placeholder text generator with built-in emoji-centric enhancements.
 Why would you want to fill you WIP project with boring Lorem Ipsum - which isn't even multibyte - when you could instead keep it modern and fill it with a mixture of random, meaningless sentences, and the odd emoji.
