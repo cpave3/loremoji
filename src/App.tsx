@@ -31,8 +31,9 @@ const generateOutput = (
 ) => {
   // First generate the right number of sentences
   const sentences = [];
+  const paraSize = 10;
   for (let i = 0; i < count; i++) {
-    sentences.push(runOnce(multi));
+    sentences.push(i> 0 && i % paraSize === 0 ? '\n\r' : runOnce(multi));
   }
 
   const stringified = sentences.reduce((acc, curr) => acc + curr, '');
@@ -108,7 +109,7 @@ const Number = styled.input.attrs(
 const App = () => {
   const [multi, setMulti] = useState(true);
   const [content, setContent] = useState("paragraph");
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(20);
   const [output, setOutput] = useState("");
   return (
     <Wrapper>

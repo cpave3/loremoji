@@ -8,6 +8,7 @@
     "this",
     "every",
     "one",
+    "100",
     "the only",
     "his",
     "her"
@@ -20,7 +21,7 @@
     "elastic",
     "smily",
     "unbelievable",
-    "infinte",
+    "infinite",
     "surprising",
     "mysterious",
     "glowing",
@@ -57,7 +58,6 @@
     "young",
     "sweet",
     "wet",
-    "cold",
     "dry",
     "heavy",
     "industrial",
@@ -107,7 +107,7 @@
     "spaghetti",
     "drink",
     "cat",
-    "t-shirt",
+    "shirt",
     "carpet",
     "wall",
     "poster",
@@ -143,7 +143,8 @@
     "microphone",
     "cpu",
     "hard drive",
-    "screwdriver"
+    "screwdriver",
+    "eggplant"
   ],
   "pre": [
     "under",
@@ -166,9 +167,10 @@
     "towards"
   ],
   "verb": [
+    "grin",
+    "smile",
     "sings",
     "dances",
-    "was dancing",
     "runs",
     "will run",
     "walks",
@@ -205,8 +207,8 @@
     "smiles",
     "will smile",
     "will succeed",
-    "is wondering",
-    "is thinking",
+    "is wondering about",
+    "is thinking about",
     "is",
     "was",
     "will be",
