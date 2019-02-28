@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
-import pjson from '../../package.json';
+import pjson from "../../package.json";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +14,9 @@ const Wrapper = styled.footer`
 `;
 
 const Link = styled.a`
-  &, &:link, &:visited {
+  &,
+  &:link,
+  &:visited {
     text-decoration: none;
     color: #7f8c8d;
   }
@@ -39,13 +41,21 @@ const Footer = () => (
     <div>
       <SocialList>
         <SocialItem>
-          <span><FontAwesomeIcon icon={faUser} /> Cameron Pavey</span>
+          <span>
+            <FontAwesomeIcon icon={faUser} /> Cameron Pavey
+          </span>
         </SocialItem>
         <SocialItem>
-          <Link href="https://github.com/cpave3"> <FontAwesomeIcon icon={faGithub} /> Github</Link>
+          <Link href="https://github.com/cpave3">
+            {" "}
+            <FontAwesomeIcon icon={faGithub} /> Github
+          </Link>
         </SocialItem>
         <SocialItem>
-          <Link href="https://twitter.com/cpave3"> <FontAwesomeIcon icon={faTwitter} /> Twitter</Link>
+          <Link href="https://twitter.com/cpave3">
+            {" "}
+            <FontAwesomeIcon icon={faTwitter} /> Twitter
+          </Link>
         </SocialItem>
       </SocialList>
     </div>
@@ -53,9 +63,7 @@ const Footer = () => (
       <small>* No actual lorem ipsum inlcuded</small>
     </div>
     <div>
-      <small>
-        {`v${pjson.version}`}
-      </small>
+      <small>{`v${pjson.version}`}</small>
     </div>
   </Wrapper>
 );

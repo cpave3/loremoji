@@ -12,4 +12,6 @@ deploy:
   domain: loremoji.surge.sh 
   skip_cleanup: true
 on:
-    branch: master
+  branch: master
+before_install:
+  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FA_TOKEN}" >> ~/.npmrc
