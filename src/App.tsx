@@ -152,6 +152,29 @@ const Number = styled.input.attrs(
   }
 `;
 
+const InputWrapper = styled.section`
+  flex: 1;
+  background-color: red;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+`;
+
+const EmojiWaiter = styled.div`
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  opacity: .1;
+  >p {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+`;
+
 const App = () => {
   const [multi, setMulti] = useState(true);
   const [content, setContent] = useState("paragraph");
@@ -174,7 +197,13 @@ const App = () => {
             value={multi}
           />
         </Controls>
-        <TextArea className="border flex-1" value={output} />
+        <InputWrapper>
+          { init ? <EmojiWaiter>
+            <div>🤔</div>
+            <p>What are you waiting for?</p>
+          </EmojiWaiter> : null }
+          <TextArea className="border flex-1" value={output} />
+        </InputWrapper>
         <ContentArea>
           { init ? <Floater>Click here to get started!</Floater> : null }
           <GenerateButton
