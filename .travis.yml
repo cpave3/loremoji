@@ -8,7 +8,7 @@ script:
   - npm run build
 deploy:
   provider: pages
-  loacl_dir: build
+  local-dir: build
   github-token: $GH_TOKEN
   skip-cleanup: true
   keep-history: true
