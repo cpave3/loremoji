@@ -7,11 +7,12 @@ cache:
 script:
   - npm run build
 deploy:
-  provider: surge
-  project: ./build/
-  domain: loremoji.app.pavey.dev 
-  skip_cleanup: true
-on:
-  branch: master
+  provider: pages
+  loacl_dir: build
+  github-token: $GH_TOKEN
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: 
 before_install:
   - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FA_TOKEN}" >> ~/.npmrc
