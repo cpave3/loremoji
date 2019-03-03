@@ -9,7 +9,7 @@ script:
 deploy:
   provider: surge
   project: ./build/
-  domain: loremoji.surge.sh 
+  domain: loremoji.app.pavey.dev 
   skip_cleanup: true
 on:
   branch: master
