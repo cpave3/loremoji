@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+script:
+  - npm run build
+deploy:
+  provider: pages
+  loacl_dir: build
+  github-token: $GH_TOKEN
+  skip-cleanup: true
+  keep-history: true
+  on:
+    branch: 
+before_install:
+  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n@fortawesome:registry=https://npm.fontawesome.com/\n//npm.fontawesome.com/:_authToken=${FA_TOKEN}" >> ~/.npmrc
