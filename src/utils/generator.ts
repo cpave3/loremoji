@@ -30,7 +30,7 @@ const getRandomSentence = (
     const word = getRandomWord(words[type]);
     if (mb) {
       const emoji = name.get(word);
-      return emoji !== undefined ? word + " " + emoji : word;
+      return emoji !== undefined ? emoji : word;
     }
     return word;
   });
