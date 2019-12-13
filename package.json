@@ -16,7 +16,7 @@
     "@types/webfontloader": "^1.6.29",
     "emoji-name-map": "^1.2.8",
     "i": "^0.3.6",
-    "npm": "^6.8.0",
+    "npm": "^6.13.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
