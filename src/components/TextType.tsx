@@ -1,10 +1,10 @@
-import * as React from 'react';
-import styled from 'styled-components';
+import * as React from "react";
+import styled from "styled-components";
 
 interface IProps {
   handleChange: (value: boolean) => void;
   value: boolean;
-};
+}
 
 const Wrapper = styled.div`
   display: inline-block;
@@ -18,15 +18,19 @@ const Type = styled.span`
 `;
 
 const TextType = (props: IProps) => {
-  const {handleChange, value} = props;
+  const { handleChange, value } = props;
   return (
     <Wrapper>
-      <Type role="presentation" onClick={() => handleChange(!value)}>
-        { `${(value ? 'Multibyte' : 'Plain')}` }
+      <Type
+        data-testid="typeToggle"
+        role="presentation"
+        onClick={() => handleChange(!value)}
+      >
+        {`${value ? "Multibyte" : "Plain"}`}
       </Type>
       <span> text</span>
     </Wrapper>
   );
-}
+};
 
 export default TextType;

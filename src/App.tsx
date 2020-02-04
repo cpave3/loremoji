@@ -12,8 +12,8 @@ import WebFont from "webfontloader";
 
 WebFont.load({
   google: {
-    families: ["Muli:300,400,700", "sans-serif"],
-  },
+    families: ["Muli:300,400,700", "sans-serif"]
+  }
 });
 
 const Main = styled.article`
@@ -32,7 +32,7 @@ const Floater = styled.div`
   margin-bottom: 20px;
   position: relative;
   font-weight: bold;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   &::after {
     width: 0;
     height: 0;
@@ -68,7 +68,7 @@ const generateOutput = (
   mode: string,
   multi: boolean,
   setOutput: (value: string) => void,
-  setInit: (value: boolean) => void,
+  setInit: (value: boolean) => void
 ) => {
   // First generate the right number of sentences
   setInit(false);
@@ -97,7 +97,7 @@ const GenerateButton = styled.button`
   color: white;
   border: none;
   font-weight: bold;
-  font-family: 'Muli', sans-serif;
+  font-family: "Muli", sans-serif;
   border-radius: 5px;
   &:hover {
     cursor: pointer;
@@ -135,7 +135,7 @@ const Number = styled.input.attrs(
   (count: number, setCount: (value: number) => void) => ({
     type: "number",
     min: 1,
-    max: 100,
+    max: 100
   })
 )`
   text-align: center;
@@ -145,6 +145,7 @@ const Number = styled.input.attrs(
   border-bottom: 1px solid #bdc3c7;
   color: #95a5a6;
   font-size: 1em;
+  -moz-appearance: textfield;
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -154,7 +155,6 @@ const Number = styled.input.attrs(
 
 const InputWrapper = styled.section`
   flex: 1;
-  background-color: red;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -162,14 +162,17 @@ const InputWrapper = styled.section`
 
 const EmojiWaiter = styled.div`
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  opacity: .1;
-  >p {
+  opacity: 0.1;
+  > p {
     font-size: 1.2rem;
     font-weight: bold;
   }
@@ -188,6 +191,7 @@ const App = () => {
         <Controls>
           <span>Generate</span>
           <Number
+            data-testid="lineCount"
             value={count}
             onChange={e => setCount(parseInt(e.target.value))}
           />
@@ -198,15 +202,24 @@ const App = () => {
           />
         </Controls>
         <InputWrapper>
-          { init ? <EmojiWaiter>
-            <div>🤔</div>
-            <p>What are you waiting for?</p>
-          </EmojiWaiter> : null }
-          <TextArea className="border flex-1" value={output} />
+          {init ? (
+            <EmojiWaiter>
+              <div>🤔</div>
+              <p>What are you waiting for?</p>
+            </EmojiWaiter>
+          ) : null}
+          <TextArea
+            data-testid="output"
+            className="border flex-1"
+            value={output}
+          />
         </InputWrapper>
         <ContentArea>
-          { init ? <Floater>Click here to get started!</Floater> : null }
+          {init ? (
+            <Floater data-testid="floater">Click here to get started!</Floater>
+          ) : null}
           <GenerateButton
+            data-testid="generateButton"
             onClick={() => {
               generateOutput(count, content, multi, setOutput, setInit);
             }}
