@@ -202,12 +202,14 @@ const App = () => {
           />
         </Controls>
         <InputWrapper>
-          {init ? (
+          {init && (
             <EmojiWaiter>
-              <div>🤔</div>
+              <span role="img" aria-label="Thinking Emoji">
+                🤔
+              </span>
               <p>What are you waiting for?</p>
             </EmojiWaiter>
-          ) : null}
+          )}
           <TextArea
             data-testid="output"
             className="border flex-1"
