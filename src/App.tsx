@@ -119,6 +119,7 @@ const Controls = styled.div`
   flex-direction: row;
   justify-content: center;
   align-content: center;
+  font-size: 11pt;
 `;
 
 const TextArea = styled.textarea`
