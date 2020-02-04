@@ -1,6 +1,7 @@
 # What is this?
 
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Pavey-Dev/loremoji)
+![Node.js CI](https://github.com/cpave3/loremoji/workflows/Node.js%20CI/badge.svg)
 
 **Demo available at [https://loremoji.app.pavey.dev/](https://loremoji.app.pavey.dev/)**
 
