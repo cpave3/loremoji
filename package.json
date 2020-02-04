@@ -30,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "percy:cypress": "percy exec cypress run"
+    "percy:cypress": "percy exec cypress run",
+    "ci:cypress": "yarn start & wait-on http://localhost:3000 && yarn percy:cypress"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +44,7 @@
   ],
   "devDependencies": {
     "@percy/cypress": "^2.3.0",
-    "cypress": "^3.8.3"
+    "cypress": "^3.8.3",
+    "wait-on": "^4.0.0"
   }
 }
