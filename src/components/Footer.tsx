@@ -30,10 +30,15 @@ const SocialList = styled.ul`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size: 10pt;
 `;
 
 const SocialItem = styled.li`
   padding: 5px 10px;
+`;
+
+const FooterItem = styled.div`
+  font-size: 10pt;
 `;
 
 const Footer = () => (
@@ -59,12 +64,12 @@ const Footer = () => (
         </SocialItem>
       </SocialList>
     </div>
-    <div>
+    <FooterItem>
       <small>* No actual lorem ipsum inlcuded</small>
-    </div>
-    <div>
+    </FooterItem>
+    <FooterItem>
       <small>{`v${pjson.version}`}</small>
-    </div>
+    </FooterItem>
   </Wrapper>
 );
 
